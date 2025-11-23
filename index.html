@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">WeatherNow</h1>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Nhập tên thành phố...">
+            <button onclick="getWeather()">Search</button>
+            <button onclick="getCurrentLocation()">📍</button>
+        </div>
+
+        <div id="weather-box" class="weather-box hidden">
+            <h2 id="cityName"></h2>
+
+            <div class="weather-main">
+                <img id="weatherIcon" src="" alt="">
+                <p id="temperature"></p>
+            </div>
+
+            <p id="description"></p>
+
+            <div class="details">
+                <p>💧 Độ ẩm: <span id="humidity"></span>%</p>
+                <p>💨 Gió: <span id="wind"></span> km/h</p>
+            </div>
+        </div>
+
+        <p id="error" class="error"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
