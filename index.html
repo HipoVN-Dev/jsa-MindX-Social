@@ -1,39 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherNow</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        #cityInput {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #searchBtn, #historyBtn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #ff7ee5;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #historyBox {
+            margin-top: 20px;
+            background: #f3f3f3;
+            padding: 15px;
+            border-radius: 15px;
+            display: none;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #historyBox li {
+            background: white;
+            padding: 8px;
+            margin-bottom: 6px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+
 </head>
+
 <body>
+    <div class="card">
+        <h2>WeatherNow</h2>
 
-    <div class="container">
-        <h1 class="title">WeatherNow</h1>
+        <input type="text" id="cityInput" placeholder="Nhập tên thành phố...">
+        <br>
+        <button id="searchBtn">Tìm kiếm</button>
+        <button id="historyBtn">Lịch sử tìm kiếm</button>
 
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Nhập tên thành phố...">
-            <button onclick="getWeather()">Search</button>
-            <button onclick="getCurrentLocation()">📍</button>
-        </div>
+        <div id="result"></div>
 
-        <div id="weather-box" class="weather-box hidden">
-            <h2 id="cityName"></h2>
-
-            <div class="weather-main">
-                <img id="weatherIcon" src="" alt="">
-                <p id="temperature"></p>
-            </div>
-
-            <p id="description"></p>
-
-            <div class="details">
-                <p>💧 Độ ẩm: <span id="humidity"></span>%</p>
-                <p>💨 Gió: <span id="wind"></span> km/h</p>
-            </div>
-        </div>
-
-        <p id="error" class="error"></p>
+        <ul id="historyBox"></ul>
     </div>
 
     <script src="script.js"></script>

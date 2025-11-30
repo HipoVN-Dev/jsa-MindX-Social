@@ -1,10 +1,70 @@
-<h2>Login</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #6a5af9, #ff7bd5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      width: 320px;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #aaa;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #6a5af9;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    button:hover {
+      background: #5846f6;
+    }
+    a { color: #6a5af9; text-decoration: none; }
+  </style>
+</head>
+<body>
 
-<input id="username" placeholder="Username">
-<input id="password" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+  <div class="box">
+    <h2>Đăng nhập</h2>
 
-<p>Bạn chưa có tài khoản? 
-<a href="register.html">Đăng ký</a></p>
+    <form id="loginForm">
+      <input type="text" id="loginUser" placeholder="Tên đăng nhập" required>
+      <input type="password" id="loginPass" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng nhập</button>
+    </form>
 
-<script src="auth.js"></script>
+    <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>
